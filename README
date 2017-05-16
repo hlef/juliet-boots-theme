@@ -1,0 +1,130 @@
+   __                      __             
+  /\ \                    /\ \__          
+  \ \ \____    ___     ___\ \ ,_\   ____  
+   \ \ '__`\  / __`\  / __`\ \ \/  /',__\ 
+    \ \ \L\ \/\ \L\ \/\ \L\ \ \ \_/\__, `\
+     \ \_,__/\ \____/\ \____/\ \__\/\____/
+      \/___/  \/___/  \/___/  \/__/\/___/ 
+
+  The clean Bootstrap theme for Juliet !
+  Juliet-version: v0.1-alpha2
+
+
+-------------------------------------------------------------------------------
+INTRODUCTION
+
+boots is a simple, elegant theme for Juliet. It is based on Bootstrap 3[0] and
+provides following features:
+
+ * Simple blog posts presentation with date, author and tags
+ * Static pages and easy edition of the navbar
+ * Archived entries
+
+-------------------------------------------------------------------------------
+CONFIGURATION
+
+boots is shipped with a minimal configuration file "config.yml.EX".
+
+For the sake of completeness, mandatory configuration entries are:
+
+  title: String, title of the website
+  description: String, description of the website
+  baseurl: String, base url (needed by the build system)
+  theme: String, name of the theme (needed by the build system)
+
+If you want to use this theme, 'theme' should be set to 'boots'.
+
+(o) Minimal post header entries:
+
+  title: String, the post's title
+  author: String, name of the post's author
+  date: Redaction date, format YYY-MM-DD HH:MM:SS
+  tags: List of tags; e.g. [tag1, tag2]
+
+(o) Optional post header entries:
+
+  archived: Boolean. true = post is archived, false = post not archived.
+            Default value: false if not set.
+
+(o) Minimal page header:
+
+  title: String, title of the page
+  shorttitle: String, short title of the page (used in the navbar)
+  permalink: String, permalink of the page
+  lead: String, leading text of the page
+
+-------------------------------------------------------------------------------
+CUSTOMIZATION
+
+boots' is organized as following:
+
+themes/boots
+├── data
+│   ├── css
+│   │   ├── bootstrap.css
+│   │   ├── custom.css
+│   │   └── pygments.css
+│   ├── favicon
+│   │   ├── apple-touch-icon-114x114.png
+│   │   ├── apple-touch-icon-120x120.png
+│   │   ├── apple-touch-icon-144x144.png
+│   │   ├── apple-touch-icon-152x152.png
+│   │   ├── apple-touch-icon-57x57.png
+│   │   ├── apple-touch-icon-60x60.png
+│   │   ├── apple-touch-icon-72x72.png
+│   │   ├── apple-touch-icon-76x76.png
+│   │   ├── favicon-128.png
+│   │   ├── favicon-16x16.png
+│   │   ├── favicon-196x196.png
+│   │   ├── favicon-32x32.png
+│   │   ├── favicon-96x96.png
+│   │   ├── favicon.ico
+│   │   ├── mstile-144x144.png
+│   │   ├── mstile-150x150.png
+│   │   ├── mstile-310x150.png
+│   │   ├── mstile-310x310.png
+│   │   └── mstile-70x70.png
+│   ├── fonts
+│   │   ├── glyphicons-halflings-regular.eot
+│   │   ├── glyphicons-halflings-regular.svg
+│   │   ├── glyphicons-halflings-regular.ttf
+│   │   ├── glyphicons-halflings-regular.woff
+│   │   └── glyphicons-halflings-regular.woff2
+│   └── js
+│       └── bootstrap.min.js
+├── includes
+│   ├── footer.html
+│   ├── head.html
+│   └── navbar.html
+├── README
+├── LICENSE
+├── config.yml.EX
+├── statics
+│   ├── archived.html
+│   └── index.html
+└── templates
+    ├── main.html
+    ├── pages.html
+    └── posts.html
+
+Basic customization tasks:
+
+(o) Change favicon:
+
+  favicons are located under data/favicon. You can change the files on the fly
+  as long as you don't change their names and their size.
+
+  If you want to modify the names or remove formats, please modify the imports
+  in includes/head.html accordingly.
+
+(o) Customize homepage (index) or archived page:
+
+  Index page and archived page are both 'statics'. You can modify their
+  structure in statics/(index|archived).html
+
+-------------------------------------------------------------------------------
+LICENSE
+
+See LICENSE file.
+
+[0] http://getbootstrap.com/

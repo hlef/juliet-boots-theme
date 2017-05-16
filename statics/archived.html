@@ -1,0 +1,20 @@
+{% extends "templates/main.html" %}
+
+{% block content %}
+    <header class="page-header">
+        <h1>{{ site.title }}</h1>
+    </header>
+    
+    <div class="lead">{{ site.description }}</div>
+
+    Archived entries:
+    <ul>
+        {% for post in posts %}
+            {% if post.archived is defined and post.archived == true %}
+            <li>
+                <span>{{ post.date.strftime("%b %-d, %Y") }}</span> <a href="{{ site.baseurl }}/posts/{{ post.slug }}">{{ post.title }}</a>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}

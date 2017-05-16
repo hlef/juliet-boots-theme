@@ -1,0 +1,13 @@
+{% extends "templates/main.html" %}
+{% block content %}
+
+    <header class="page-header">
+        <small>{{ page.date.strftime("%b %-d, %Y") }}{% if page.lastupdated is defined %}<span class="text-muted"> (last updated on {{ page.lastupdated.strftime("%b %-d, %Y") }})</span>{% endif %}, by {{ page.author }}.</small>
+        <h2>{{ page.title }}</h2>
+    </header>
+
+    <article>
+        {{ content }}
+    </article>
+
+{% endblock %}
